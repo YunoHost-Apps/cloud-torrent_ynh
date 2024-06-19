@@ -1,5 +1,5 @@
 [Unit]
-Description=Simple Torrent web server
+Description=cloud-torrent
 After=network.target
 
 [Service]
@@ -8,7 +8,7 @@ User=__APP__
 Group=__APP__
 Environment=PORT=__PORT__
 WorkingDirectory=__INSTALL_DIR__
-ExecStart=__INSTALL_DIR__/__APP__ -c __INSTALL_DIR__/config.yml --host 127.0.0.1
+ExecStart=__INSTALL_DIR__/__APP__ --config-path __INSTALL_DIR__/config.json --port __PORT__ --host 127.0.0.1
 Restart=always
 RestartSec=3
 

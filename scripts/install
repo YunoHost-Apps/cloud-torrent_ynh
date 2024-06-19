@@ -43,10 +43,10 @@ yunohost service add $app --description="Self-hosted remote torrent client" --ne
 #=================================================
 ynh_script_progression --message="Modifying a config file..." --weight=1
 
-ynh_add_config --template="../conf/config.default.yml" --destination="$install_dir/config.yml"
+ynh_add_config --template="config.json" --destination="$install_dir/config.json"
 
-chmod 400 "$install_dir/config.yml"
-chown $app:$app "$install_dir/config.yml"
+chmod 400 "$install_dir/config.json"
+chown $app:$app "$install_dir/config.json"
 
 #=================================================
 # START SYSTEMD SERVICE
